@@ -12,13 +12,15 @@ def detecting_fake_news(var):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-   print(request.method)
+
    if request.method == 'POST':
+
       
       content = request.form['content']
       pred, prob = detecting_fake_news(content)
 
       return "This news is " +str(pred)+ " With a prob of "+ str(prob)
+      
    else: 
       return render_template('index.html')
 
