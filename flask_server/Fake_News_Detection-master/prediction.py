@@ -4,14 +4,19 @@ Created on Mon Dec  4 17:45:40 2017
 
 @author: NishitP
 """
-
+import sys
 import pickle
 
 #doc_new = ['obama is running for president in 2016']
 
-var = input("Please enter the news text you want to verify: ")
-print("You entered: " + str(var))
+#var = input("Please enter the news text you want to verify: ")
 
+if sys.argv[0] == None:
+    print("Please enter a Param!")
+    exit(0)
+
+var = sys.argv[0]
+print("You entered: " + str(var))
 
 #function to run for prediction
 def detecting_fake_news(var):    
