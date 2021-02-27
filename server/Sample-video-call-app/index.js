@@ -14,7 +14,10 @@ app.use(express.static('public'));
 
 app.get('/', (req, res)=>{
     res.render('call', {callID:id});
-    
+})
+
+app.get('/drag',(req,res)=>{
+    res.render("drag",{test:1});
 })
 
 
@@ -51,7 +54,7 @@ io.on('connection', socketio =>{
 })
 
 
-const PORT = process.env.PORT || 3000;   //server run port
+const PORT = process.env.PORT || 3001;   //server run port
 server.listen(PORT, 
     ()=>{
         console.log(`Server started at: http://127.0.0.1:${PORT}`);
